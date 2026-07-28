@@ -1,0 +1,17 @@
+,min,max,mean,dtype
+Age,13.0,84.0,27.023952095808383,int64
+Number of sexual partners,1.0,28.0,2.5353293413173654,float64
+First sexual intercourse,10.0,32.0,17.020359281437127,float64
+Num of pregnancies,0.0,11.0,2.2838323353293415,float64
+Smokes (years),0.0,37.0,1.2343288546526947,float64
+Smokes (packs/year),0.0,37.0,0.4585708243097006,float64
+Hormonal Contraceptives,0.0,1.0,0.6946107784431138,float64
+Hormonal Contraceptives (years),0.0,30.0,2.0805202407688625,float64
+IUD,0.0,1.0,0.09940119760479042,float64
+IUD (years),0.0,19.0,0.4568502994011976,float64
+STDs (number),0.0,4.0,0.1592814371257485,float64
+STDs:condylomatosis,0.0,1.0,0.05269461077844311,float64
+STDs:vaginal condylomatosis,0.0,1.0,0.004790419161676647,float64
+STDs:syphilis,0.0,1.0,0.02155688622754491,float64
+STDs:HIV,0.0,1.0,0.02155688622754491,float64
+STDs:HPV,0.0,1.0,0.0023952095808383233,float64
