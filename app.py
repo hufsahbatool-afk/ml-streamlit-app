@@ -75,8 +75,8 @@ if dataset == "Cervical Cancer":
         ]])
 
         # Load the scaler and the selected model
-        scaler = joblib.load("notebook1/notebook1/cervical_scaler.pkl")
-        model_filename = f"notebook1/notebook1/cervical_{model_file_map[model_choice]}.pkl"
+        scaler = joblib.load("notebook1/cervical_scaler.pkl")
+        model_filename = f"notebook1/cervical_{model_file_map[model_choice]}.pkl"
         model = joblib.load(model_filename)
 
         # Scale the input the same way training data was scaled
@@ -113,7 +113,7 @@ elif dataset == "IoTNet24 IDS":
 
     if st.button("Predict"):
         # Encode proto using the saved encoder
-        proto_encoder = joblib.load("notebook2/notebook2/iotnet24_proto_encoder.pkl")
+        proto_encoder = joblib.load("notebook2/iotnet24_proto_encoder.pkl")
         proto_encoded = proto_encoder.transform([proto])[0]
 
         # One-hot encode conn_state manually (matches training format)
@@ -126,9 +126,9 @@ elif dataset == "IoTNet24 IDS":
             *conn_state_encoded
         ]])
 
-        scaler = joblib.load("notebook2/notebook2/iotnet24_scaler.pkl")
-        label_encoder = joblib.load("notebook2/notebook2/iotnet24_label_encoder.pkl")
-        model_filename = f"notebook2/notebook2/iotnet24_{model_file_map[model_choice]}.pkl"
+        scaler = joblib.load("notebook2/iotnet24_scaler.pkl")
+        label_encoder = joblib.load("notebook2/iotnet24_label_encoder.pkl")
+        model_filename = f"notebook2/iotnet24_{model_file_map[model_choice]}.pkl"
         model = joblib.load(model_filename)
 
         input_scaled = scaler.transform(input_data)
@@ -164,8 +164,8 @@ elif dataset == "Heart Disease":
     st_slope = st.selectbox("ST Slope", ["Up", "Flat", "Down"])
 
     if st.button("Predict"):
-        sex_encoder = joblib.load("notebook3/notebook3/heart_sex_encoder.pkl")
-        angina_encoder = joblib.load("notebook3/notebook3/heart_angina_encoder.pkl")
+        sex_encoder = joblib.load("notebook3/heart_sex_encoder.pkl")
+        angina_encoder = joblib.load("notebook3/heart_angina_encoder.pkl")
 
         sex_encoded = sex_encoder.transform([sex])[0]
         angina_encoded = angina_encoder.transform([exercise_angina])[0]
@@ -185,8 +185,8 @@ elif dataset == "Heart Disease":
             *cp_encoded, *ecg_encoded, *slope_encoded
         ]])
 
-        scaler = joblib.load("notebook3/notebook3/heart_scaler.pkl")
-        model_filename = f"notebook3/notebook3/heart_{model_file_map[model_choice]}.pkl"
+        scaler = joblib.load("notebook3/heart_scaler.pkl")
+        model_filename = f"notebook3/heart_{model_file_map[model_choice]}.pkl"
         model = joblib.load(model_filename)
 
         input_scaled = scaler.transform(input_data)
@@ -224,8 +224,8 @@ elif dataset == "FDA Adverse Events":
     indication_choice = st.selectbox("Drug Indication", indications)
 
     if st.button("Predict"):
-        sex_encoder = joblib.load("notebook4/notebook4/fda_sex_encoder.pkl")
-        fatal_encoder = joblib.load("notebook4/notebook4/fda_fatal_encoder.pkl")
+        sex_encoder = joblib.load("notebook4/fda_sex_encoder.pkl")
+        fatal_encoder = joblib.load("notebook4/fda_fatal_encoder.pkl")
 
         sex_encoded = sex_encoder.transform([patient_sex])[0]
 
@@ -237,8 +237,8 @@ elif dataset == "FDA Adverse Events":
             *drug_encoded, *indication_encoded
         ]])
 
-        scaler = joblib.load("notebook4/notebook4/fda_scaler.pkl")
-        model_filename = f"notebook4/notebook4/fda_{model_file_map[model_choice]}.pkl"
+        scaler = joblib.load("notebook4/fda_scaler.pkl")
+        model_filename = f"notebook4//fda_{model_file_map[model_choice]}.pkl"
         model = joblib.load(model_filename)
 
         input_scaled = scaler.transform(input_data)
